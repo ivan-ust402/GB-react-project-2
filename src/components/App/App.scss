@@ -1,0 +1,15 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #c6c4d3;
+  &__title {
+    text-align: center;
+  }
+  &__messenger {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+}

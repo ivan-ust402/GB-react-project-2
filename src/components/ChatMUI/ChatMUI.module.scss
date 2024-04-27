@@ -1,0 +1,83 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  height: 500px;
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  &__input {
+    outline: none;
+    border: none;
+    background-color: #eee;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 10px;
+    min-width: 100px;
+    max-width: 150px;
+    flex-direction: column;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: greenyellow;
+    box-sizing: border-box;
+    border: 1px solid #95ec13;
+    cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgb(253, 253, 44);
+        box-sizing: border-box;
+        border: 1px solid #777;
+        color: #777;
+      }
+    }
+    @media (hover: none) {
+      &:active {
+        background-color: rgb(253, 253, 44);
+        box-sizing: border-box;
+        border: 1px solid #777;
+        color: #777;
+      }
+    }
+  }
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 420px;
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &__text {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-style: italic;
+  }
+}
