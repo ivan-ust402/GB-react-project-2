@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react"
-import styles from "./ChatMUI.module.scss"
+import styles from "./Chat.module.scss"
 import {
   Box,
   Button,
+  Container,
   List,
   ListItem,
   ListItemText,
@@ -10,7 +11,7 @@ import {
   Typography,
 } from "@mui/material"
 
-function Chat() {
+export const Chat = () => {
   const [messageList, setMessageList] = useState([])
   const [message, setMessage] = useState({
     text: "",
@@ -165,6 +166,7 @@ function Chat() {
         {messageList
           .map((message, index) => (
             <ListItem
+              style={stylesApp.container}
               key={index}
               disableGutters
               sx={{
@@ -206,4 +208,9 @@ function Chat() {
   )
 }
 
-export default Chat
+const stylesApp = {
+  container: {
+    // backgroundColor: 'blue',
+  }
+}
+

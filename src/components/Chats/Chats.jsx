@@ -6,7 +6,7 @@ import {
 } from "@mui/material"
 import React, { useEffect, useState } from "react"
 
-export default function ChatsMUI() {
+export const Chats = () => {
   const [chatList, setChatList] = useState([])
 
   useEffect(() => {
@@ -53,7 +53,9 @@ export default function ChatsMUI() {
     >
       {chatList.map((chatItem) => {
         return (
-          <ListItemButton>
+          <ListItemButton
+            key={chatItem.id}
+          >
             <ListItemText
               key={chatItem.id}
               primary={chatItem.name}
