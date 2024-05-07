@@ -61,13 +61,13 @@ export const Chat = () => {
       document.removeEventListener("click", checkClick)
     }
   })
-  const messagesEndRef = useRef(null);
+  const messagesEndRef = useRef(null)
 
   useEffect(() => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
     }
-  }, [messageList]);
+  }, [messageList])
 
   function checkClick(e) {
     const currentClick = e.target
@@ -117,7 +117,7 @@ export const Chat = () => {
           alignItems: "center",
           flexDirection: "row",
           borderRadius: "20px",
-          position: 'absolute',
+          position: "absolute",
           bottom: 50,
           left: 0,
           right: 0,
@@ -148,23 +148,25 @@ export const Chat = () => {
           size="large"
           sx={{
             height: "56px",
-            boxSizing: 'border-box',
+            boxSizing: "border-box",
           }}
           onClick={sendMessage}
         >
           Send Message
         </Button>
       </Box>
-      <List sx={{ 
-        width: "100%", 
-        bgcolor: "background.paper", 
-        height: 310, 
-        overflow: 'scroll',
-        border: '1px solid purple',
-        borderRadius: '15px',
-      }}>
-        {messageList
-          .map((message, index) => (
+      <div style={stylesApp.chatList}>
+        <List
+          sx={{
+            width: "100%",
+            bgcolor: "background.paper",
+            height: 310,
+            overflow: "scroll",
+            padding: '0px',
+            borderRadius: '15px'
+          }}
+        >
+          {messageList.map((message, index) => (
             <ListItem
               style={stylesApp.container}
               key={index}
@@ -174,8 +176,8 @@ export const Chat = () => {
                 flexDirection: "column",
                 alignItems: "flex-start",
                 gap: "2px",
-                paddingLeft: '15px',
-                paddingRight: '15px',
+                paddingLeft: "15px",
+                paddingRight: "15px",
               }}
             >
               <Typography
@@ -203,7 +205,8 @@ export const Chat = () => {
             </ListItem>
           ))}
           <div ref={messagesEndRef} />
-      </List>
+        </List>
+      </div>
     </div>
   )
 }
@@ -211,6 +214,11 @@ export const Chat = () => {
 const stylesApp = {
   container: {
     // backgroundColor: 'blue',
+  },
+  chatList: {
+    border: "1px solid purple",
+    borderRadius: "15px",
+    paddingTop: '10px',
+    paddingBottom: '10px',
   }
 }
-

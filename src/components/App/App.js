@@ -1,4 +1,3 @@
-import { Container } from '@mui/material';
 import './App.scss';
 import { Chat } from '../Chat/Chat';
 import { Chats } from '../Chats/Chats';
